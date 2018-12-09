@@ -4,5 +4,20 @@
     "titleBar.inactiveForeground": "#000000CC",
     "titleBar.activeBackground": "#FFC600",
     "titleBar.inactiveBackground": "#FFC600CC"
-  }
+  },
+  "cSpell.words": [
+    "Signin",
+    "Signout",
+    "lightgrey",
+    "perpage",
+    "prefetch",
+    "radnika",
+    "radnikanext",
+    "refetch",
+    "sickfits",
+    "signup",
+    "webfont",
+    "woff"
+  ],
+  "javascript.validate.enable": false
 }
