@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Title from './styles/Title';
 import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 import DeleteItem from './DeleteItem';
+import AddToCart from './AddToCart';
 
 
 export default class Item extends Component {
@@ -28,16 +29,17 @@ export default class Item extends Component {
         </Title>
         <PriceTag>{formatMoney(item.price)}</PriceTag>
         <p>{item.description}</p>
+
         <div className="buttonList">
           <Link href={{
             pathname: 'update',
             query: { id: item.id },
           }}
           >
-            <a>Edit</a>
+            <a>Edit ✏️</a>
           </Link>
-          <button>Add To Cart</button>
-          <DeleteItem id={item.isRequired}>Delete this item</DeleteItem>
+          <AddToCart id={item.id} />
+          <DeleteItem id={item.isRequired}>Delete this Item</DeleteItem>
         </div>
       </ItemStyles>
     );
