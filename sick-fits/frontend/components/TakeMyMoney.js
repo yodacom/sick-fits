@@ -17,20 +17,24 @@ class TakeMyMoney extends React.Component {
     console.log('On Token Called!');
     console.log(res.id);
   };
+
   render() {
     return (
-      <User>{({ data: { me } }) => <StripeCheckout
-        amount={calcTotalPrice(me.cart)}
-        name="Yodacom"
-        description={`Order of ${totalItems(me.cart)}items!`}
-        image={me.cart[0].item && me.cart[0].item.image}
-        stripeKey='pk_test_4UaRVB0brRawNozWJ1avjzoD'
-        currency="USD"
-        email={me.email}
-        token={res => this.onToken(res)}
-      >
-        {this.props.children}
-      </StripeCheckout>}
+      <User>
+        {({ data: { me } }) => (
+          <StripeCheckout
+            amount={calcTotalPrice(me.cart)}
+            name="Yodacom"
+            description={`Order of ${totalItems(me.cart)}items!`}
+            image={me.cart[0].item && me.cart[0].item.image}
+            stripeKey="pk_test_4UaRVB0brRawNozWJ1avjzoD"
+            currency="USD"
+            email={me.email}
+            token={res => this.onToken(res)}
+          >
+            {this.props.children}
+          </StripeCheckout>
+        )}
       </User>
     );
   }
