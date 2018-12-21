@@ -15,5 +15,6 @@
     "signout",
     "signup",
     "typeof"
-  ]
+  ],
+  "search.usePCRE2": true
 }
